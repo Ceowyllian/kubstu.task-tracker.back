@@ -4,10 +4,10 @@ A backend for a project management and issue tracking system, built with Django 
 
 ## Tech stack
 
-- Backend Framework: Django 4.2+, Django REST Framework
+- Backend Framework: Django 5.2+, Django REST Framework
 - Database: PostgreSQL
 - Real-time: Django Channels, Redis (Channel Layer)
-- Task Queue: Celery, RabbitMQ (Broker)
+- Task queue: Celery, RabbitMQ (Broker)
 - Storage: MinIO (S3-compatible)
 - Logging: Graylog
 - Containerization: Docker, Docker Compose
