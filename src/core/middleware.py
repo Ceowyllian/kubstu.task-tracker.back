@@ -1,7 +1,7 @@
 from django.middleware.common import MiddlewareMixin
 from request_logging.middleware import LoggingMiddleware
 
-from config.components.logging import USE_GRAYLOG
+from config.settings.logging import USE_GRAYLOG
 
 __all__ = [
     "ExtractTokenMiddleware",
