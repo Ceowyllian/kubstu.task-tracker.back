@@ -4,12 +4,16 @@ from djoser.views import TokenCreateView as DjoserTokenCreateView
 from djoser.views import TokenDestroyView as DjoserTokenDestroyView
 from djoser.views import UserViewSet as DjoserUserViewSet
 
+from shared.api import SCHEMA_TAG_AUTH, extend_schema
+
 __all__ = [
     "TokenCreateView",
     "TokenDestroyView",
+    "UserViewSet",
 ]
 
 
+@extend_schema(tags=[SCHEMA_TAG_AUTH])
 class TokenCreateView(DjoserTokenCreateView):
 
     def _action(self, serializer):
@@ -25,6 +29,7 @@ class TokenCreateView(DjoserTokenCreateView):
         return response
 
 
+@extend_schema(tags=[SCHEMA_TAG_AUTH])
 class TokenDestroyView(DjoserTokenDestroyView):
     def post(self, request):
         response = super().post(request)
@@ -32,5 +37,6 @@ class TokenDestroyView(DjoserTokenDestroyView):
         return response
 
 
+@extend_schema(tags=[SCHEMA_TAG_AUTH])
 class UserViewSet(DjoserUserViewSet):
     pass
